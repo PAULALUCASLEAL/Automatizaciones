@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-18T00:00:00Z",
+  "title": "Design System: PK Soluciones",
+  "extensions": {
+    "colorMeta": {
+      "limestone": { "role": "neutral", "displayName": "Limestone", "cssVar": "--bg (alias --paper)", "canonical": "oklch(97.1% 0.0057 84)", "tonalRamp": ["#0c0b09", "#252421", "#413f3c", "#5f5d5a", "#82807c", "#a6a4a1", "#cccac6", "#f0eeea"] },
+      "whitewash": { "role": "neutral", "displayName": "Whitewash", "cssVar": "--surface", "canonical": "oklch(91.8% 0.0121 79)", "tonalRamp": ["#0e0b06", "#27231e", "#433f39", "#615d56", "#848078", "#a9a49c", "#cfcac2", "#f3eee6"] },
+      "channel-sand": { "role": "neutral", "displayName": "Channel Sand (never text)", "cssVar": "--sand", "canonical": "oklch(82.7% 0.0205 77)", "tonalRamp": ["#100a03", "#2a2319", "#463f34", "#645c51", "#877f73", "#aca397", "#d2c9bc", "#f6ede0"] },
+      "weathered-earth": { "role": "neutral", "displayName": "Weathered Earth", "cssVar": "--muted", "canonical": "oklch(53.3% 0.0202 72)", "tonalRamp": ["#100a03", "#2a2319", "#463e34", "#655c51", "#887f73", "#ada397", "#d3c9bd", "#f7ede0"] },
+      "weathered-earth-strong": { "role": "neutral", "displayName": "Weathered Earth Strong (accessibility variant)", "cssVar": "--muted-strong", "canonical": "oklch(49.8% 0.0206 72)", "tonalRamp": ["#100a03", "#2a2319", "#473e34", "#655c51", "#887f73", "#ada397", "#d3c9bc", "#f7ede0"] },
+      "charcoal-water": { "role": "primary", "displayName": "Charcoal Water", "cssVar": "--ink", "canonical": "oklch(25.6% 0.0040 84)", "tonalRamp": ["#0c0b09", "#252422", "#41403d", "#5f5d5b", "#81807d", "#a6a4a2", "#cccac8", "#f0eeeb"] },
+      "wet-stone": { "role": "primary", "displayName": "Wet Stone", "cssVar": "--ink-2", "canonical": "oklch(41.6% 0.0139 71)", "tonalRamp": ["#0f0a05", "#28231d", "#443f38", "#635c55", "#867f77", "#aaa39b", "#d0c9c1", "#f5ede5"] },
+      "stone-line": { "role": "neutral", "displayName": "Stone Line", "cssVar": "--line", "canonical": "oklch(86.4% 0.0157 77)", "tonalRamp": ["#0f0a05", "#28231c", "#443f37", "#635d54", "#867f76", "#aaa49a", "#d0c9bf", "#f5ede3"] },
+      "stone-line-strong": { "role": "neutral", "displayName": "Stone Line Strong (accessibility variant)", "cssVar": "--line-strong", "canonical": "oklch(58.8% 0.0217 72)", "tonalRamp": ["#110a03", "#2b2218", "#473e33", "#655c50", "#887e72", "#ada396", "#d4c9bc", "#f8eddf"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero H1 only; the contact H2 is a near sibling." },
+      "headline": { "displayName": "Headline", "purpose": "Section H2s, balanced wrapping." },
+      "title": { "displayName": "Title", "purpose": "Service rows, demo heads, process steps." },
+      "statement": { "displayName": "Statement", "purpose": "Display-face sentences: recognition list, FAQ summaries, principles, flow caption, figures." },
+      "lead": { "displayName": "Lead", "purpose": "Section intros in secondary grey, max 38em." },
+      "body": { "displayName": "Body", "purpose": "Running text, 32 to 38em measure." },
+      "label": { "displayName": "Label", "purpose": "Tabs, field labels, card keys, disclosure tag. Sentence case." }
+    },
+    "shadows": [
+      { "name": "focus-ring-field", "value": "0 0 0 1px var(--ink)", "purpose": "Doubles the charcoal border on focused inputs. Functional, not elevation." },
+      { "name": "rail-knockout", "value": "0 0 0 3px var(--bg)", "purpose": "Limestone halo that separates the demo stepper rail from its ground." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Reveals, node state changes, card rows, button press." },
+      { "name": "ease-in-out", "value": "cubic-bezier(0.65, 0, 0.35, 1)", "purpose": "Pipeline deal card sliding between stages." },
+      { "name": "press", "value": "transform 0.16s ease-out; scale(0.97)", "purpose": "Active state of buttons and tabs." },
+      { "name": "node-round", "value": "rx/ry 0.55s ease-out", "purpose": "Partidor node rounding from square to 22px when done." },
+      { "name": "reduced-motion", "value": "transition/animation-duration 0.01ms", "purpose": "Collapses all motion; diagrams must read as static states." }
+    ],
+    "breakpoints": [
+      { "name": "hero-full-width-buttons", "value": "max-width: 479px" },
+      { "name": "form-two-column", "value": "640px" },
+      { "name": "services-three-up", "value": "760px" },
+      { "name": "nav-desktop", "value": "900px" },
+      { "name": "split-sticky", "value": "960px / 1000px" },
+      { "name": "services-row-split", "value": "1100px" },
+      { "name": "hero-split", "value": "1180px" },
+      { "name": "flow-tabs-2x2", "value": "@container flow (max-width: 600px)" }
+    ],
+    "layout": {
+      "container": "1240px + 2 * gutter",
+      "diagramUnit": "--u: calc(100cqw / var(--vbw)) on .flow-stage (inline-size container); overlays sized in viewBox units"
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Charcoal slab with trailing arrow; the one next step (a conversation).",
+      "html": "<button class=\"ds-btn ds-btn-primary\">Cuéntanos qué quieres mejorar <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14 M13.5 6.5L19 12l-5.5 5.5\"/></svg></button>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 24px; border-radius: 10px; border: 1px solid transparent; font: 600 1rem/1.2 var(--font-body); cursor: pointer; transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.16s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn svg { transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-primary { background: var(--ink); color: var(--bg); } .ds-btn-primary:hover { background: var(--ink-2); } .ds-btn-primary:hover svg { transform: translateX(3px); } .ds-btn:active { transform: scale(0.97); } .ds-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Hairline secondary action.",
+      "html": "<button class=\"ds-btn-ghost\">Ver cómo funciona</button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; min-height: 52px; padding: 0 24px; border-radius: 10px; border: 1px solid var(--line-strong); background: transparent; color: var(--ink); font: 600 1rem/1.2 var(--font-body); cursor: pointer; transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.16s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-ghost:hover { background: var(--surface); border-color: var(--ink-2); } .ds-btn-ghost:active { transform: scale(0.97); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Limestone field with a strong stone border; focus doubles to charcoal.",
+      "html": "<label class=\"ds-field\"><span>Nombre</span><input placeholder=\"Tu nombre\" /></label>",
+      "css": ".ds-field { display: grid; gap: 8px; font: 650 0.9688rem var(--font-body); color: var(--ink); } .ds-field input { min-height: 50px; padding: 12px 14px; border: 1px solid var(--line-strong); border-radius: 10px; background: var(--paper); color: var(--ink); font: 400 1rem/1.5 var(--font-body); transition: border-color 0.2s ease, box-shadow 0.2s ease; } .ds-field input:focus { outline: none; border-color: var(--ink); box-shadow: 0 0 0 1px var(--ink); }"
+    },
+    {
+      "name": "Site Navigation",
+      "kind": "nav",
+      "description": "Sticky limestone header, Wet Stone links with whitewash hover.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav-mark\">PK Soluciones</span><a href=\"#\">Soluciones</a><a href=\"#\">Cómo trabajamos</a><a href=\"#\">Contacto</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 4px; height: 76px; padding: 0 16px; background: var(--bg); border-bottom: 1px solid var(--line); } .ds-nav-mark { margin-right: auto; font: 620 1.1875rem var(--font-display); letter-spacing: -0.02em; color: var(--ink); } .ds-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border-radius: 8px; text-decoration: none; font: 500 0.9688rem var(--font-body); color: var(--ink-2); transition: color 0.2s ease, background-color 0.2s ease; } .ds-nav a:hover { color: var(--ink); background: var(--surface); } .ds-nav a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }"
+    },
+    {
+      "name": "Scenario Selector",
+      "kind": "chip",
+      "refersTo": "tab-selected",
+      "description": "Limestone track of equal pills on the whitewash flow frame; selected pill is charcoal.",
+      "html": "<div class=\"ds-tabs\" role=\"tablist\"><button role=\"tab\" aria-selected=\"true\">Pedidos y documentos</button><button role=\"tab\" aria-selected=\"false\">Captación de clientes</button><button role=\"tab\" aria-selected=\"false\">CRM y seguimiento</button><button role=\"tab\" aria-selected=\"false\">Atención al cliente</button></div>",
+      "css": ".ds-tabs { display: flex; gap: 4px; padding: 4px; border-radius: 12px; background: var(--bg); } .ds-tabs button { flex: 1 1 auto; white-space: nowrap; min-height: 44px; padding: 6px 10px; border: 0; border-radius: 9px; background: transparent; color: var(--ink-2); font: 600 0.8125rem/1.2 var(--font-body); cursor: pointer; transition: background-color 0.2s ease, color 0.2s ease, transform 0.16s cubic-bezier(0.16, 1, 0.3, 1); } .ds-tabs button[aria-selected='true'] { background: var(--ink); color: var(--bg); } .ds-tabs button[aria-selected='false']:hover { background: var(--surface); color: var(--ink); } .ds-tabs button:active { transform: scale(0.97); } .ds-tabs button:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }"
+    },
+    {
+      "name": "Acequia Channel with Partidor Nodes",
+      "kind": "custom",
+      "refersTo": "partidor-node",
+      "description": "Signature: sand bed with stone floor, charcoal pulse, square nodes in next / active / done states, gate bar on an exception branch.",
+      "html": "<div class=\"ds-flow\"><svg viewBox=\"0 0 400 120\" width=\"100%\" aria-hidden=\"true\"><path class=\"ds-bed\" d=\"M20 60H380\"/><path class=\"ds-floor\" d=\"M20 60H380\"/><path class=\"ds-pulse\" d=\"M20 60H200\"/><path class=\"ds-bed ds-branch\" d=\"M300 60V110\"/><g transform=\"translate(300 96)\"><rect class=\"ds-post\" x=\"-12\" y=\"-3\" width=\"4\" height=\"6\" rx=\"1\"/><rect class=\"ds-post\" x=\"8\" y=\"-3\" width=\"4\" height=\"6\" rx=\"1\"/><rect class=\"ds-gate\" x=\"-9\" y=\"-2\" width=\"18\" height=\"4\" rx=\"1.5\"/></g><g transform=\"translate(80 60)\"><rect class=\"ds-node ds-done\" x=\"-22\" y=\"-22\" width=\"44\" height=\"44\"/><path class=\"ds-check\" d=\"M-7 1l4.5 4.5L8-5\"/></g><g transform=\"translate(200 60)\"><rect class=\"ds-node ds-active\" x=\"-22\" y=\"-22\" width=\"44\" height=\"44\"/><rect class=\"ds-dot-on\" x=\"-4\" y=\"-4\" width=\"8\" height=\"8\" rx=\"1.5\"/></g><g transform=\"translate(300 60)\"><rect class=\"ds-node ds-next\" x=\"-22\" y=\"-22\" width=\"44\" height=\"44\"/><rect class=\"ds-dot\" x=\"-4\" y=\"-4\" width=\"8\" height=\"8\" rx=\"1.5\"/></g></svg></div>",
+      "css": ".ds-flow { background: var(--surface); border-radius: 24px; padding: 24px; } .ds-bed, .ds-floor, .ds-pulse { fill: none; stroke-linecap: round; stroke-linejoin: round; } .ds-bed { stroke: var(--sand); stroke-width: 13; } .ds-bed.ds-branch { stroke-width: 11; stroke-dasharray: 2 7; } .ds-floor { stroke: var(--line); stroke-width: 6; } .ds-pulse { stroke: var(--ink); stroke-width: 6; } .ds-node { fill: var(--paper); stroke: var(--sand); stroke-width: 1.5; rx: 5px; ry: 5px; transition: fill 0.4s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.4s ease, rx 0.55s cubic-bezier(0.16, 1, 0.3, 1), ry 0.55s cubic-bezier(0.16, 1, 0.3, 1); } .ds-next { stroke: var(--ink-2); stroke-dasharray: 4 3; } .ds-active { fill: var(--ink); stroke: var(--ink); } .ds-done { stroke: var(--ink); rx: 22px; ry: 22px; } .ds-dot { fill: var(--sand); } .ds-dot-on { fill: var(--paper); } .ds-check { fill: none; stroke: var(--ink); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; } .ds-post { fill: var(--ink-2); } .ds-gate { fill: var(--ink); } .ds-flow:hover .ds-next { stroke: var(--ink); }"
+    },
+    {
+      "name": "Diagram Detail Card",
+      "kind": "card",
+      "description": "Limestone card overlaid on the whitewash frame, keyed rows in secondary grey with 600 values.",
+      "html": "<div class=\"ds-dcard\"><div class=\"ds-dcard-title\">Pedido PD-2041</div><dl><div><dt>Cliente</dt><dd>Distribuciones Vega</dd></div><div><dt>Líneas</dt><dd>3 referencias</dd></div><div><dt>Estado</dt><dd>Faltan datos</dd></div></dl></div>",
+      "css": ".ds-dcard { max-width: 260px; border-radius: 3px; background: var(--bg); padding: 12px 14px; font: 13px/1.35 var(--font-body); color: var(--ink); transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); } .ds-dcard-title { font-weight: 650; font-size: 12.5px; color: var(--muted-strong); padding-bottom: 8px; margin-bottom: 4px; border-bottom: 1px solid var(--line); } .ds-dcard dl { margin: 0; display: grid; } .ds-dcard dl div { display: grid; grid-template-columns: 76px 1fr; gap: 8px; padding: 3px 0; } .ds-dcard dt { color: var(--muted-strong); } .ds-dcard dd { margin: 0; font-weight: 600; } .ds-dcard:hover { transform: translateY(-1px); }"
+    },
+    {
+      "name": "Exception / Review Notice",
+      "kind": "card",
+      "description": "Dashed Wet Stone panel: something is held for a person, or a preview is not live.",
+      "html": "<div class=\"ds-flag\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 4l9 15.5H3z M12 10v4 M12 16.8v.2\"/></svg><span>Falta la dirección de entrega. Lo revisa una persona del equipo.</span></div>",
+      "css": ".ds-flag { display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border: 1.5px dashed var(--ink-2); border-radius: 10px; background: var(--bg); color: var(--ink); font: 400 0.9688rem/1.5 var(--font-body); transition: border-color 0.2s ease; } .ds-flag svg { flex: none; margin-top: 2px; } .ds-flag:hover { border-color: var(--ink); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Huerta Acequia",
+    "overview": "Work is water in a Murcian huerta: it arrives scattered, is led along channels and through partidores, and reaches each field in order; a gate holds it for a person when something is missing. Every surface is limestone ground and whitewashed wall, and the only \"colour\" that moves is charcoal, read as water and as ink. The system is calm, warm and architectural: generous section breathing, hairline stone dividers instead of boxes, and one recurring instrument (the channel with its square nodes) that explains process wherever process is shown.\n\nDensity is low and deliberate. Sections are separated by large vertical rhythm and tonal shifts (limestone to whitewash to one charcoal band), never by drop shadows or decorative gradients. The interface is predominantly light, with exactly two intentional dark moments: the \"Cómo trabajamos\" process band and the footer.\n\nState is always legible without colour alone: a node changes shape (square to rounded), gains an icon (check, alert), changes its line style (solid, dashed) and its label. Work is shown being routed and reviewed, never vanishing.",
+    "keyCharacteristics": [
+      "Owner-pinned seven-colour warm-neutral palette plus two accessibility variants; no hue accent.",
+      "Bricolage Grotesque display with tight negative tracking over Figtree body.",
+      "The acequia channel language: sand bed, stone floor, charcoal pulse, square partidor nodes.",
+      "Dashed borders mean \"pending, exception or a person must look\"; solid charcoal means \"done or in progress\".",
+      "Flat, tonal depth; hairline dividers; no elevation shadows.",
+      "Two dark charcoal moments per page, no more."
+    ],
+    "rules": [
+      { "name": "The Pinned Palette Rule", "body": "The seven brand hexes are owner-pinned and binding. New needs are solved with the two accessibility variants or by changing value role, never by adding a hue. No purple, blue, neon, metallic gold or decorative gradients.", "section": "colors" },
+      { "name": "The Sand Is Never Text Rule", "body": "Channel Sand never carries text or icons of any size. It is a bed, a rule or a stroke.", "section": "colors" },
+      { "name": "The Surface-Aware Secondary Rule", "body": "Secondary text uses Weathered Earth on limestone and Weathered Earth Strong on whitewash or inside the diagram. Check the ground before choosing the grey.", "section": "colors" },
+      { "name": "The Variable Weight Rule", "body": "Weights are set as variable values (460, 520, 540, 560, 620, 650), not stepped 400/700. Headings never go bold; emphasis inside UI goes to 600 to 650.", "section": "typography" },
+      { "name": "The Tabular Figures Rule", "body": "Any number that is compared or totalled (estimator, tables, report rows, mail lines) uses tabular numerals.", "section": "typography" },
+      { "name": "The No-Lift Rule", "body": "Nothing floats. Cards, menus and diagrams sit on the plane; hierarchy comes from value contrast and hairlines, never from drop shadows.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do explain any process with the acequia language: sand bed plus stone floor, square nodes, charcoal pulse.",
+      "Do mark the next node with a dashed outline before it activates, and signal completion with shape (square to 22px round), a check icon and a label change together.",
+      "Do give exception and human-review paths dashed borders and, in channels, a gate bar.",
+      "Do size anything overlaid on the diagram in `--u` (viewBox) units so it scales with the SVG.",
+      "Do use Weathered Earth Strong for secondary text on whitewash and in diagrams.",
+      "Do label every demonstration \"Demostración ilustrativa\" with fictional data.",
+      "Do keep touch targets at 44px or more and focus visible as a 2px charcoal outline."
+    ],
+    "donts": [
+      "Don't set any text or icon in Channel Sand (#CEC5B8).",
+      "Don't add purple, blue, neon, metallic gold or decorative gradients; don't introduce a hue accent.",
+      "Don't use drop shadows to separate surfaces.",
+      "Don't add more than the two dark charcoal moments (process band and footer) to a page.",
+      "Don't let a node complete by colour change alone, or show work disappearing instead of being routed.",
+      "Don't reproduce n8n-style node graphs; keep the channel-and-partidor language.",
+      "Don't uppercase or letterspace labels; labels are sentence case at 600 to 650."
+    ]
+  }
+}
